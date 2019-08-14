@@ -11,29 +11,43 @@ let MyDate = function(day,month,year) {
     this.day = day;
     this.month = month;
     this.year = year;
+    this.date = this.day +"/"+ this.month +"/"+ this.year;
     this.getDay = function () {
         return this.day;
-    }
-    this.setDay = function(day){
+    };
+    this.setDay = function (day) {
         this.day = day;
-    }
+    };
     this.getMonth = function () {
         return this.month;
-    }
-    this.setMonth = function(month){
+    };
+    this.setMonth = function (month) {
         this.month = month;
-    }
-    this.getYear = function(){
+    };
+    this.getYear = function () {
         return this.year;
-    }
+    };
     this.setYear = function year(year) {
         this.year = year;
+    };
+    this.getDate = function () {
+        return this.date;
+    };
+    this.setDate = function (day,month,year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    };
+    this.toString = function(){
+        return this.date;
     }
-}
-let date = new MyDate(3,6,2000);
+};
+
+let date = new MyDate(3,6,2000,);
 let day = date.getDay();
 let year = date.getYear();
 let month = date.getMonth();
+let setDate = date.setDate(3,4,5);
 date.setDay(5);
 date.setMonth(4);
 date.setYear(6);
@@ -41,7 +55,9 @@ alert(day + "/ "+month+"/"+year);
 date.setDay(5);
 date.setMonth(4);
 date.setYear(1997);
-alert( date.getDay() +"/" + date.getMonth() +"/" + date.getYear());
+date.setDate(3,4,2000);
+let kq = date.toString();
+alert('kq='+kq);
 </script>
 </body>
 </html>
